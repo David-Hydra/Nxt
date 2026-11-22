@@ -1,0 +1,12 @@
+[build]
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Proxy EVERYTHING to the function (equivalent of your rewrites array)
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/nut"
+  status = 200
+  force = true
